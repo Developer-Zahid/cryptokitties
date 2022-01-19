@@ -1,0 +1,81 @@
+/* About Section Style */
+.about{
+    padding: toRem(80) 0;
+    background-color: #f3f1ee;
+    background-image: url("../images/pattern/pattern-tile.svg");
+    background-size: toRem(440) auto;
+    &__card{
+        padding: toRem(42);
+        margin-bottom: toRem(64);
+        @include min-desktop{
+            padding: toRem(64);
+        }
+        &__header{
+            @include tablet{
+                margin-bottom: toRem(20);
+            }
+            &__top{
+                max-width: toRem(95);
+                transform: translateY(-20%);
+                @include desktop{
+                    max-width: toRem(70);
+                }
+            }
+            &__body{
+                @include min-desktop{
+                    min-width: toRem(300);
+                }
+                @include min-tablet{
+                    min-width: toRem(200);
+                }
+            }
+        }
+        &__body{
+            @include min-tablet{
+                margin-left: toRem(64);
+            }
+            &__title{
+                font-size: toRem(30);
+                @include min-desktop{
+                    font-size: toRem(42);
+                }
+                font-weight: 500;
+                letter-spacing: -.3px;
+            }
+            &__text{
+                color: $color-gray;
+                font-size: toRem(18);
+                @include min-desktop{
+                    font-size: toRem(24);
+                    max-width: toRem(600);
+                }
+            }
+        }
+    }
+    .counter__card{
+        padding: 0 toRem(24);
+        &__block{
+            padding: toRem(20) 0;
+            @include min-desktop{
+                padding: toRem(32) 0;
+            }
+            &__image-wrapper{
+                width: toRem(100);
+                height: toRem(100);
+            }
+            &__title{
+                font-size: toRem(28);
+                margin: toRem(20) 0;
+            }
+            &__count{
+                color: $color-primary;
+                font-size: toRem(30);
+                font-weight: 600;
+                line-height: 1;
+                @include min-desktop{
+                    font-size: toRem(50);
+                }
+            }
+        }
+    }
+}

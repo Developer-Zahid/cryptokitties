@@ -1,0 +1,22 @@
+/* Catalogue Section Style */
+.catalogue{
+    padding-top: toRem(18);
+    padding-bottom: toRem(90);
+    &__image{
+        &-wrapper{
+            max-width: toRem(1480);
+        }
+    }
+    &__title{
+        font-size: toRem(30);
+        margin-top: toRem(20);
+        @include min-tablet{
+            font-size: toRem(72);
+        }
+    }
+    &__text{
+        @include min-tablet{
+            font-size: toRem(24);
+        }
+    }
+}

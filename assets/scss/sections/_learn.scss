@@ -1,0 +1,44 @@
+/* Learn Section Style */
+.learn{
+    padding-bottom: toRem(120);
+    &__image-wrapper{
+        max-width: toRem(280);
+    }
+    &__title{
+        font-size: toRem(30);
+        @include min-desktop{
+            font-size: toRem(42);
+        }
+    }
+    &__text{
+        color: $color-gray;
+        @include min-desktop{
+            font-size: toRem(24);
+            max-width: toRem(770);
+        }
+    }
+    &__card{
+        border-radius: toRem(20);
+        padding-top: toRem(50);
+        &__animation{
+            top: 0;
+            z-index: -1;
+            &__video{
+                object-fit: cover;
+            }
+        }
+        &__image{
+            max-width: toRem(670);
+        }
+    }
+    .primary-btn{
+        width: 100%;
+        max-width: toRem(210);
+        padding-left: 2px;
+        padding-right: 2px;
+        margin: toRem(20) toRem(8) toRem(64);
+        @include min-desktop{
+            margin: toRem(64) toRem(8);
+        }
+    }
+}

@@ -1,0 +1,177 @@
+/* Reset CSS */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+::selection{
+	color: $color-white;
+	background: $color-primary;
+}
+
+// html,
+// body{
+// 	scroll-behavior: smooth;
+// }
+
+html{
+	font-size: 16px;
+	text-size-adjust: none;
+}
+
+body {
+	color: $color-text;
+	font-weight: 400;
+	line-height: 1.4;
+	font-family: $font-primary;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+	color: unset;
+}
+
+button,
+button:hover,
+button:focus,
+button:active {
+	outline: none;
+}
+
+input:-webkit-autofill{
+	-webkit-text-fill-color: unset;
+	transition: background-color 5000s;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+img{
+	object-fit: cover;
+}
+
+.user-select-none{
+	pointer-events: none;
+}
+
+.list-inline{
+	font-size: 0;
+	&-item{
+		font-size: 1rem;
+	}
+}
+
+/* Custom Container Style */
+.container{
+	@include min-desktop-lg{
+		max-width: 1260px;
+	}
+}
+
+/* Veno Box Style */
+.vbox{
+	&-close{
+		top: 2%;
+		right: 2%;
+		width: toRem(50);
+		height: toRem(50);
+		border-radius: 50%;
+		border: 3px solid $color-shadow;
+		padding: 0;
+		padding-top: toRem(15);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 3rem;
+		background: $color-primary !important;
+		color: $color-white !important;
+	}
+	&-preloader .sk{
+		&-child,
+		&-rect,
+		&-cube,
+		&-spinner,
+		&-rotating-plane{
+			background: $color-primary !important;
+		}
+	}
+	&-next,
+	&-prev{
+		width: 3rem;
+		height: 3rem;
+		span{
+			width: 2rem;
+			height: 2rem;
+			border-width: 4px;
+			border-top-color: $color-primary !important;
+			border-right-color: $color-primary !important;
+		}
+	}
+}
+
+/* Preloader Section Style */
+.preloader{
+	top: 0;
+	left: 0;
+	z-index: 9999;
+}
+
+/* Common Section Gap Style */
+.section-gap{
+	padding: 6rem 0;
+	@include desktop{
+		padding: 3rem 0;
+	}
+	&--fix{
+		padding-bottom: calc(6rem - 30px);
+		@include desktop{
+			padding-bottom: calc(3rem - 30px);
+		}
+	}
+}
+
+/* Common Section Heading Style */
+.section-header{
+	margin-bottom: toRem(50);
+	@include mobile{
+		margin-bottom: toRem(30);
+	}
+	&__title{
+		font-size: toRem(40);
+		font-family: unset;
+		@include tablet{
+			font-size: toRem(30);
+		}
+		@include mobile{
+			font-size: toRem(26);
+		}
+	}
+}
+
+.card-outline{
+	border-radius: toRem(10);
+	border: .2rem solid $color-border;
+	box-shadow:
+		0 .2rem 0 0 $color-border,
+		0 .6rem 1.5rem 0 rgba(42,40,37,.2);
+}
+
+.primary-text{
+	color: $color-primary;
+}
+
+.border-bg{
+	background-image: url("../images/pattern/bgpattern.svg");
+	background-size: auto toRem(2);
+	background-position: top;
+	background-repeat: repeat-x;
+}

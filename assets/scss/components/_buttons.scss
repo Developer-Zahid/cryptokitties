@@ -1,0 +1,43 @@
+/* Common Button's Style */
+.primary-btn{
+	color: $color-white;
+	font-size: 1.2rem;
+	font-family: $font-primary;
+	font-weight: 500;
+	line-height: 1;
+	padding: toEm(11) toEm(15) toEm(6);
+	background-color: $color-primary;
+	border: 2px solid $color-shadow;
+	box-shadow: 0 toEm(2) 0 0 $color-shadow;
+	border-radius: toRem(5);
+	transition:
+		transform .2s cubic-bezier(.06,.67,.37,.99),
+		box-shadow .1s ease-in-out;
+	&--lg{
+		padding: toEm(17) toEm(15) toEm(12);
+	}
+	&:hover,
+	&:active,
+	&:focus-visible{
+		transform: translateY(-.2rem);
+		box-shadow: 0 toEm(4) 0 0 $color-shadow;
+	}
+}
+
+.scroll-top{
+	bottom: 3%;
+	right: 1%;
+	display: none;
+	cursor: pointer;
+	z-index: 7;
+	@include mobile{
+		bottom: 2%;
+	}
+	&__btn{
+		width: 2.8rem;
+		height: 2.8rem;
+		font-size: 1.1rem;
+		color: unset;
+		background: unset;
+	}
+}

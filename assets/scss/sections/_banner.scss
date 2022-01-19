@@ -1,0 +1,124 @@
+/* Header Section Style */
+.banner{
+    &__shape{
+        top: 0;
+        right: toRem(-60);
+        max-width: toRem(350);
+        z-index: 1;
+    }
+    &__animation{
+        &__video{
+            object-fit: cover;
+            appearance: none;
+        }
+    }
+    &__bottom{
+        padding-bottom: toRem(56);
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("../images/banner/colortunnel.png") no-repeat bottom;
+            background-size: auto toRem(240);
+            @include min-desktop{
+                background-size: 100% toRem(160);
+            }
+            z-index: -1;
+        }
+    }
+    &__heading{
+        padding-top: toRem(60);
+    }
+    &__title{
+        font-size: toRem(50);
+        @include min-tablet{
+            font-size: toRem(80);
+        }
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: -.15rem;
+    }
+    &__text{
+        color: $color-gray;
+        font-size: toRem(24);
+        @include min-tablet{
+            font-size: toRem(32);
+        }
+    }
+    &__video{
+        z-index: 1;
+        &__btn{
+            width: toRem(90);
+            height: toRem(90);
+            background-color: rgba($color-primary, $alpha: 0.75);
+            border: toRem(3) solid $color-shadow;
+            transition: transform 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+            &__icon{
+                transform: translateX(3px) rotate(-90deg);
+                &__svg{
+                    width: toRem(40);
+                    height: toRem(40);
+                }
+            }
+            &:hover,
+            &:focus-visible{
+                transform: scale(1.3);
+            }
+        }
+    }
+    &__image{
+        &-wrapper{
+            max-width: 45vw;
+            margin-top: toRem(-20);
+        }
+        &--middle,
+        &--back{
+            top: 0;
+            left: 0;
+        }
+    }
+    &__card{
+        @include min-desktop{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row-reverse;
+        }
+        max-width: toRem(984);
+        @include tablet{
+            max-width: toRem(350);
+        }
+        padding: toRem(24);
+        &__list{
+            display: grid;
+            gap: toRem(12);
+            @include min-desktop{
+                margin-left: toRem(24);
+            }
+            @include min-tablet{
+                gap: toRem(24);
+                grid-template-columns: 1fr 1fr;
+            }
+            &__item{
+                &__text{
+                    font-weight: 500;
+                    line-height: 1.2;
+                    margin-left: toRem(8);
+                    @include min-tablet{
+                        font-size: toRem(20);
+                    }
+                }
+            }
+        }
+        &__footer{
+            flex-shrink: 0;
+            .primary-btn{
+                @include desktop{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

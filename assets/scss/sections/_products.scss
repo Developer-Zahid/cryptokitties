@@ -1,0 +1,32 @@
+/* Products Section Style */
+.products{
+    padding-bottom: toRem(100);
+    .container-fluid{
+        @include min-desktop-lg{
+            max-width: 1712px;
+        }
+    }
+    &__header{
+        background-color: #f3f1ee;
+        background-image: url("../images/pattern/pattern-tile.svg");
+        background-size: toRem(440) auto;
+        box-shadow: none;
+        padding: toRem(12) toRem(30);
+        &__image{
+            max-width: toRem(46);
+            margin-right: toRem(20);
+        }
+        &__title{
+            color: #444444;
+            font-size: toRem(37);
+            padding-top: 5px;
+            &__link{
+                color: $color-primary;
+                &:hover{
+                    color: $color-primary;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

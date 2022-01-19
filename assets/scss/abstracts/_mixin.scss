@@ -1,0 +1,86 @@
+//Responsive Breakpoint SCSS Mixin:
+
+//xxs
+@mixin mobile-xxs {
+    @media (max-width: 480px) {
+        @content;
+    }
+}
+//min-xxs
+@mixin min-mobile-xxs {
+    @media (min-width: 481px) {
+        @content;
+    }
+}
+
+//xs
+@mixin mobile {
+    @media (max-width: 575px) {
+        @content;
+    }
+}
+//min-xs
+@mixin min-mobile {
+    @media (min-width: 576px) {
+        @content;
+    }
+}
+
+//sm
+@mixin tablet {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+//min-sm
+@mixin min-tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+//md
+@mixin desktop {
+    @media (max-width: 991px) {
+        @content;
+    }
+}
+//min-md
+@mixin min-desktop {
+    @media (min-width: 992px) {
+        @content;
+    }
+}
+
+//lg
+@mixin desktop-lg {
+    @media (max-width: 1199px) {
+        @content;
+    }
+}
+//min-lg
+@mixin min-desktop-lg {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+//xl
+@mixin desktop-xl {
+    @media (max-width: 1400px) {
+        @content;
+    }
+}
+//min-xl
+@mixin min-desktop-xl {
+    @media (min-width: 1401px) {
+        @content;
+    }
+}
+
+//sm-lg
+@mixin tablet-to-desktop-lg {
+    @media (min-width: 768px) and (max-width: 1199px) {
+        @content;
+    }
+}

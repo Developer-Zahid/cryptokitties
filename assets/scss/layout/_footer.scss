@@ -1,0 +1,87 @@
+/* Footer Section Style */
+.footer{
+    padding: toRem(40) 0 toRem(24);
+    border-top: .2rem solid #f3f1ee;
+    &__block{
+        &__list{
+            &__link{
+                color: $color-gray;
+                font-weight: 500;
+                display: block;
+                transition: color .25s;
+                &--facebook{
+                    color: #3a5998;
+                    &:hover,
+                    &:focus-visible{
+                        color: darken($color: #3a5998, $amount: 20);
+                    }
+                }
+                &--reddit{
+                    color: #fd4404;
+                    &:hover,
+                    &:focus-visible{
+                        color: darken($color: #fd4404, $amount: 20);
+                    }
+                }
+                &--twitter{
+                    color: #1ba1f3;
+                    &:hover,
+                    &:focus-visible{
+                        color: darken($color: #1ba1f3, $amount: 20);
+                    }
+                }
+                &--youTube{
+                    color: red;
+                    &:hover,
+                    &:focus-visible{
+                        color: darken($color: red, $amount: 20);
+                    }
+                }
+                &--instagram{
+                    color: #8b2ab7;
+                    &:hover,
+                    &:focus-visible{
+                        color: darken($color: #8b2ab7, $amount: 20);
+                    }
+                }
+                &--discord{
+                    color: #7289da;
+                    &:hover,
+                    &:focus-visible{
+                        color: darken($color: #7289da, $amount: 20);
+                    }
+                }
+                &--twitch{
+                    color: #6441a4;
+                    &:hover,
+                    &:focus-visible{
+                        color: darken($color: #6441a4, $amount: 20);
+                    }
+                }
+            }
+        }
+        &__text{
+            color: $color-gray;
+            &--icon{
+                position: relative;
+                &::after{
+                    content: url("../images/icons/paw.svg");
+                    position: absolute;
+                    transform: translate(5px, -5px);
+                }
+            }
+            &__link{
+                color: $color-text;
+                font-weight: 500;
+                text-decoration: underline #e7e6e4;
+                text-underline-offset: 5px;
+                transition: color .25s;
+                &:hover,
+                &:focus-visible{
+                    color: lighten($color-primary, $amount: 10);
+                    text-decoration: underline #e7e6e4;
+                }
+            }
+        }
+    }
+}
