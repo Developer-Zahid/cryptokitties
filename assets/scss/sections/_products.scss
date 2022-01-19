@@ -6,6 +6,10 @@
             max-width: 1712px;
         }
     }
+    &__container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
     &__header{
         background-color: #f3f1ee;
         background-image: url("../images/pattern/pattern-tile.svg");

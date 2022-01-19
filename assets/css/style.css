@@ -1177,6 +1177,13 @@ img {
   }
 }
 
+.products__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
 .products__header {
   background-color: #f3f1ee;
   background-image: url("../images/pattern/pattern-tile.svg");
