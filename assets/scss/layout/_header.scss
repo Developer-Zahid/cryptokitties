@@ -27,7 +27,8 @@
 				line-height: 1;
 				margin-top: toRem(3);
 			}
-			&:hover{
+			&:hover,
+			&:focus-visible{
 				.navbar-brand__logo{
 					background-image: url("../images/logo/logo-hover.gif");
 				}
@@ -35,16 +36,19 @@
 		}
 		&-toggler{
 			font-size: 1rem;
-			color: unset;
+			color: $color-primary;
 			z-index: 8;
 			@extend %transition;
+			&__icon{
+				width: toRem(30)
+			}
 			&[aria-expanded="true"],
 			&:hover{
 				color: $color-primary;
 			}
 		}
 		&-collapse{
-			@include desktop{
+			@include tablet{
 				position: fixed;
 				top: 0;
 				right: 0;
@@ -55,7 +59,8 @@
 				justify-content: center;
 				width: 50%;
 				height: 100vh;
-				background-color: lighten($color-black, $amount: 20);
+				background-color: $color-white;
+				overflow: auto;
 				transition: transform ease-in-out .3s;
 				&.show{
 					transform: translateX(0);
@@ -63,12 +68,19 @@
 				.navbar-nav{
 					width: 100%;
 					margin-top: toRem(20);
-					.nav-item{
-						margin: 0.3rem 0.6rem;
+					.nav{
+						&-item{
+							margin: 0.3rem 0.6rem;
+							width: 100%;
+						}
+						&-link{
+							justify-content: center;
+							width: 100%;
+						}
 					}
 				}
 			}
-			@include tablet{
+			@include mobile{
 				width: 100%;
 			}
 		}
@@ -77,87 +89,18 @@
 				&:not(:first-child){
 					margin-left: toRem(24);
 				}
-				.dropdown{
-					&-toggle{
-						@include min-desktop{
-							&::after{
-								display: none;
-							}
-						}
-					}
-					&-menu{
-						background-color: unset;
-						padding: toRem(5);
-						@extend %transition;
-						@include min-desktop{
-							display: block;
-							transform: translateY(40%);
-							opacity: 0;
-							visibility: hidden;
-							box-shadow: unset;
-							max-width: toRem(150);
-						}
-					}
-					&-item{
-						&:not(:last-child){
-							margin-bottom: toRem(5);
-						}
-						border-radius: inherit;
-						color: unset;
-						@extend %transition;
-						&.active,
-						&:active,
-						&:hover,
-						&:focus{
-							color: unset;
-							background-color: unset;
-						}
-					}
-				}
-				&.dropdown{
-					@include min-desktop{
-						&::before{
-							content: "";
-							position: absolute;
-							left: 0;
-							bottom: 0;
-							transform: translateY(100%);
-							width: 100%;
-							height: 100%;
-							cursor: pointer;
-							pointer-events: none;
-						}
-						&:hover,
-						&:focus{
-							&::before{
-								pointer-events: all;
-							}
-							.dropdown-menu{
-								transform: translateY(0);
-								opacity: 1;
-								visibility: visible;
-							}
-						}
-					}
-					&:hover,
-					&:focus{
-						.nav-link{
-							color: $color-primary;
-						}
-					}
-				}
 			}
 			&-link{
 				color: $color-text;
 				font-family: $color-primary;
 				padding-left: 0;
 				padding-right: 0;
+				transition: color .2s;
 				&__text{
 					font-size: toRem(18);
 					font-weight: 500;
 					letter-spacing: -.02rem;
 				}
-				transition: color .2s;
 				&.active,
 				&:hover,
 				&:focus-visible{
@@ -165,23 +108,6 @@
 				}
 				&__image{
 					margin-right: toRem(5);
-				}
-				&.dropdown-toggle{
-					.dropdown-toggle__icon{
-						margin-left: toRem(5);
-						&__svg{
-							fill: $color-text;
-							width: toRem(12);
-							height: toRem(12);
-						}
-					}
-				}
-				&:focus ~ .dropdown-menu{
-					@include min-desktop{
-						transform: translateY(0);
-						opacity: 1;
-						visibility: visible;
-					}
 				}
 			}
 		}
@@ -211,6 +137,7 @@
 	width: 100%;
 	height: 100%;
 	background: rgba($color: #000000, $alpha: 0.5);
+	backdrop-filter: blur(5px);
 	z-index: 8;
 	opacity: 0;
 	transition: opacity .4s ease .4s;
@@ -219,7 +146,7 @@
 		transform: translateX(0);
 		opacity: 1;
 	}
-	@include tablet-to-desktop-lg{
+	@include mobile-to-desktop-lg{
 		display: block;
 	}
 }

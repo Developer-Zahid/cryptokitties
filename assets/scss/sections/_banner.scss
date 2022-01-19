@@ -5,6 +5,12 @@
         right: toRem(-60);
         max-width: toRem(350);
         z-index: 1;
+        @include desktop{
+            max-width: toRem(200);
+        }
+        @include tablet{
+            max-width: toRem(100);
+        }
     }
     &__animation{
         &__video{
@@ -73,6 +79,9 @@
         &-wrapper{
             max-width: 45vw;
             margin-top: toRem(-20);
+            @include tablet{
+                min-width: 55vw;
+            }
         }
         &--middle,
         &--back{

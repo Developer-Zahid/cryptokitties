@@ -1,0 +1,60 @@
+/* Common Modal's Style */
+.modal{
+    &-dialog {
+        max-width: toRem(380);
+      }
+    &-content{
+        box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.05);
+        border-radius: toRem(10);
+    }
+    &-header{
+        .close{
+            color: $color-danger;
+        }
+    }
+    &-title{
+        font-size: toRem(20);
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 200%);
+            width: 100%;
+            height: 2px;
+            background-color: $color-primary;
+        }
+    }
+    &-body{
+        &__text{
+            color: $color-gray;
+            font-size: toRem(18);
+            &__link{
+                color: $color-text;
+                &:hover{
+                    color: $color-text;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    &__form{
+        .form-control{
+            font-size: toRem(20);
+            border: toRem(2) solid $color-border;
+            text-shadow: none;
+            font-weight: 500;
+            min-height: toRem(58);
+            line-height: 1;
+            caret-color: $color-primary;
+            &::placeholder{
+                color: #9c9c9b;
+                font-weight: 400;
+                line-height: 1;
+            }
+        }
+    }
+    &-backdrop.show{
+        opacity: 0.4;
+    }
+}

@@ -24,20 +24,56 @@
 	}
 }
 
-.scroll-top{
-	bottom: 3%;
-	right: 1%;
-	display: none;
+.message-btn{
+	bottom: 4%;
+	right: 2%;
 	cursor: pointer;
 	z-index: 7;
+	background-color: transparent;
+	height: toRem(52);
+	transition: all .1s ease-in-out;
 	@include mobile{
 		bottom: 2%;
 	}
-	&__btn{
-		width: 2.8rem;
-		height: 2.8rem;
-		font-size: 1.1rem;
-		color: unset;
-		background: unset;
+	&__icon{
+		width: toRem(52);
+		height: toRem(52);
+		background-color: $color-secondary;
+		&__image{
+			max-width: toRem(50);
+			transition: all .1s ease-in-out;
+			&--hover{
+				opacity: 0;
+			}
+		}
+	}
+	&__text{
+		color: $color-white;
+		font-size: 0;
+		visibility: hidden;
+		opacity: 0;
+		line-height: 1;
+		@extend %transition;
+	}
+	&:hover{
+		background-color: $color-secondary;
+		padding-right: toRem(20);
+		.message-btn{
+			&__icon{
+				&__image{
+					&--normal{
+						opacity: 0;
+					}
+					&--hover{
+						opacity: 1;
+					}
+				}
+			}
+			&__text{
+				font-size: toRem(16);
+				visibility: visible;
+				opacity: 1;
+			}
+		}
 	}
 }
