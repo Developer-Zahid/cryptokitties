@@ -123,6 +123,17 @@ img{
 	top: 0;
 	left: 0;
 	z-index: 9999;
+	&__card{
+		width: toRem(100);
+		height: toRem(100);
+		border-radius: toRem(10);
+		border: toRem(2) solid $color-border;
+		box-shadow: 0 toRem(2) 0 0 $color-border;
+		pointer-events: none;
+		&__image{
+			max-width: toRem(90);
+		}
+	}
 }
 
 /* Common Section Gap Style */
@@ -159,10 +170,10 @@ img{
 
 .card-outline{
 	border-radius: toRem(10);
-	border: .2rem solid $color-border;
+	border: toRem(2) solid $color-border;
 	box-shadow:
-		0 .2rem 0 0 $color-border,
-		0 .6rem 1.5rem 0 rgba(42,40,37,.2);
+		0 toRem(2) 0 0 $color-border,
+		0 toRem(6) toRem(15) 0 rgba(42,40,37,.2);
 }
 
 .primary-text{

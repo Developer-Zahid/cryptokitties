@@ -12,14 +12,20 @@
         border: toRem(2) solid #f3f1ee;
         box-shadow: rgb(231, 230, 228) 3px 5px;
         border-radius: 5px;
-        padding: toRem(12) toRem(30);
+        padding: toRem(12) toRem(15);
+        @include min-tablet{
+            padding: toRem(12) toRem(30);
+        }
         &__image{
             max-width: toRem(46);
             margin-right: toRem(20);
         }
         &__title{
             color: #444444;
-            font-size: toRem(37);
+            font-size: toRem(25);
+            @include min-tablet{
+                font-size: toRem(37);
+            }
             padding-top: 5px;
             &__link{
                 color: $color-primary;

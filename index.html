@@ -22,6 +22,15 @@
 	<link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+	<!-- Preloader Section -->
+	<div class="preloader position-fixed w-100 h-100 bg-white">
+		<div class="preloader-wrapper d-flex align-items-center justify-content-center w-100 h-100">
+			<div class="preloader__card d-flex align-items-center justify-content-center">
+				<img src="./assets/images/loader/ether-diamond.gif" alt="preloader image" class="preloader__card__image w-100">
+			</div>
+		</div>
+	</div>
+
 	<!-- Header Section -->
 	<header class="header w-100">
 		<nav class="navbar navbar-expand-md p-0">
@@ -176,7 +185,7 @@
 								</ul>
 							</div>
 							<div class="banner__card__footer">
-								<button type="button" class="primary-btn primary-btn--lg">Get your own Kitty</button>
+								<button type="button" class="primary-btn primary-btn--lg" data-toggle="modal" data-target="#createAccountModal">Get your own Kitty</button>
 							</div>
 						</div>
 					</div>
@@ -607,5 +616,12 @@
 	<script src="./assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script src="./assets/plugins/venobox/js/venobox.min.js"></script>
 	<script src="./assets/js/script.js"></script>
+	<script>
+		/* Document on load functions */
+		$(window).on('load', function () {
+			$(".banner__animation__video").get(0).play();
+			$(".learn__card__animation__video").get(0).play();
+		});
+	</script>
 </body>
 </html>

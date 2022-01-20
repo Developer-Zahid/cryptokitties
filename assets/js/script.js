@@ -3,9 +3,8 @@
 
 	/* Document on load functions */
 	$(window).on('load', function () {
-        // preLoader();
+        preLoader();
 		headerHeightFixer();
-		$(".banner__animation__video").get(0).play();
     });
 	/* Document on Resize functions */
 	$(window).on('resize', function () {
@@ -69,35 +68,10 @@
         $("html").removeClass("overflow-hidden");
     });
 
-    /*  Banner slider */
-    // $(".banner__slider").slick({
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     autoplay: true,
-    //     autoplaySpeed: 4000,
-    //     speed: 500,
-    //     arrows: true,
-    //     prevArrow: '<button class="slick__arrows slick__arrows--left border-0 d-inline-flex align-items-center justify-content-center position-absolute"><i class="fas fa-chevron-left"></i></button>',
-	// 	nextArrow: '<button class="slick__arrows slick__arrows--right border-0 d-inline-flex align-items-center justify-content-center position-absolute"><i class="fas fa-chevron-right"></i></button>',
-    //     dots: false,
-    //     pauseOnHover: false,
-    //     pauseOnFocus: false,
-    //     infinite: true,
-	// 	responsive: [
-	// 		{
-	// 			breakpoint: 768,
-	// 			settings: {
-	// 				arrows: false,
-	// 				dots: true
-	// 			}
-	// 		},
-	// 	]
-    // });
-
     /* veno box */
     $('.venobox').venobox({
-        bgcolor    : '#ffffff',
-        spinner    : 'three-bounce',
+        bgcolor: '#ffffff',
+        spinner: 'three-bounce',
     });
 
 })(jQuery);

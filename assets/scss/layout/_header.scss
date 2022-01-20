@@ -70,7 +70,7 @@
 					margin-top: toRem(20);
 					.nav{
 						&-item{
-							margin: 0.3rem 0.6rem;
+							margin: 0.3rem 0;
 							width: 100%;
 						}
 						&-link{
@@ -87,7 +87,9 @@
 		.nav{
 			&-item{
 				&:not(:first-child){
-					margin-left: toRem(24);
+					@include min-tablet{
+						margin-left: toRem(24);
+					}
 				}
 			}
 			&-link{

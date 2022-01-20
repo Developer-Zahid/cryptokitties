@@ -110,7 +110,7 @@ p {
 
 @media (max-width: 575px) {
   p {
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
   }
 }
 
@@ -260,6 +260,20 @@ img {
   z-index: 9999;
 }
 
+.preloader__card {
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 0.625rem;
+  border: 0.125rem solid #e7e6e4;
+  -webkit-box-shadow: 0 0.125rem 0 0 #e7e6e4;
+          box-shadow: 0 0.125rem 0 0 #e7e6e4;
+  pointer-events: none;
+}
+
+.preloader__card__image {
+  max-width: 5.625rem;
+}
+
 /* Common Section Gap Style */
 .section-gap {
   padding: 6rem 0;
@@ -313,9 +327,9 @@ img {
 
 .card-outline {
   border-radius: 0.625rem;
-  border: 0.2rem solid #e7e6e4;
-  -webkit-box-shadow: 0 0.2rem 0 0 #e7e6e4, 0 0.6rem 1.5rem 0 rgba(42, 40, 37, 0.2);
-          box-shadow: 0 0.2rem 0 0 #e7e6e4, 0 0.6rem 1.5rem 0 rgba(42, 40, 37, 0.2);
+  border: 0.125rem solid #e7e6e4;
+  -webkit-box-shadow: 0 0.125rem 0 0 #e7e6e4, 0 0.375rem 0.9375rem 0 rgba(42, 40, 37, 0.2);
+          box-shadow: 0 0.125rem 0 0 #e7e6e4, 0 0.375rem 0.9375rem 0 rgba(42, 40, 37, 0.2);
 }
 
 .primary-text {
@@ -638,7 +652,7 @@ img {
     margin-top: 1.25rem;
   }
   .header .navbar-collapse .navbar-nav .nav-item {
-    margin: 0.3rem 0.6rem;
+    margin: 0.3rem 0;
     width: 100%;
   }
   .header .navbar-collapse .navbar-nav .nav-link {
@@ -657,8 +671,10 @@ img {
   }
 }
 
-.header .navbar .nav-item:not(:first-child) {
-  margin-left: 1.5rem;
+@media (min-width: 768px) {
+  .header .navbar .nav-item:not(:first-child) {
+    margin-left: 1.5rem;
+  }
 }
 
 .header .navbar .nav-link {
@@ -1266,7 +1282,13 @@ img {
   -webkit-box-shadow: #e7e6e4 3px 5px;
           box-shadow: #e7e6e4 3px 5px;
   border-radius: 5px;
-  padding: 0.75rem 1.875rem;
+  padding: 0.75rem 0.9375rem;
+}
+
+@media (min-width: 768px) {
+  .products__header {
+    padding: 0.75rem 1.875rem;
+  }
 }
 
 .products__header__image {
@@ -1276,8 +1298,14 @@ img {
 
 .products__header__title {
   color: #444444;
-  font-size: 2.3125rem;
+  font-size: 1.5625rem;
   padding-top: 5px;
+}
+
+@media (min-width: 768px) {
+  .products__header__title {
+    font-size: 2.3125rem;
+  }
 }
 
 .products__header__title__link {
